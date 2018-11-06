@@ -10,7 +10,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Luyen update Login and add new logout
 import util.CommonFunction;
 import util.VariableSettings;
 

@@ -1,5 +1,7 @@
 package WSM_LOGOUT;
 
+import org.apache.xalan.xsltc.compiler.sym;
+>>>>>>> Luyen update Login and add new logout
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
