@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
+import util.CommonFunction;
 import util.VariableSettings;
 
 @Test
-public class wsmLogin {
+public class wsmLogin extends CommonFunction {
 
 	public WebDriver driver;
-	public String expected = null;
-	public String actual = null;
 
 	@BeforeTest
 	public void launchBrowser() {
@@ -34,91 +34,98 @@ public class wsmLogin {
 	@Test(priority = 0)
 	public void TC01_openpage() {
 
-		expected = "Working space";
-		actual = driver.getTitle();
-		Assert.assertEquals(actual, expected);
+		String actual = driver.getTitle();
+		Assert.assertEquals(actual, titleHomePage);
+
 	}
 
 	@Test(priority = 1)
 	public void TC01_loginTitle() {
 
-		driver.findElement(By.xpath("//a[@class='wsm-btn btn-login']")).click();
-		expected = "LOGIN";
-		actual = driver.findElement(By.xpath("//label[@class='login-title'][contains(.,'LOGIN')]")).getText();
-		Assert.assertEquals(actual, expected);
+
+		driver.findElement(By.xpath("/html/body/div[2]/div[3]/a")).click();
+		String actual = driver.findElement(By.xpath("/html/body/div[2]/div[1]/label")).getText();
+		Assert.assertEquals(actual, "LOGIN");
+
 	}
 
 	@Test(priority = 2)
 	public void TC01_emailTextbox() {
 
-		expected = "TRUE";
-
+		String actual = "";
 		if (driver.findElement(By.id("user_email")).isDisplayed())
 			actual = "TRUE";
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 3)
 	public void TC01_passTextbox() {
 
-		expected = "TRUE";
 
+		String actual = "";
 		if (driver.findElement(By.id("user_password")).isDisplayed())
 			actual = "TRUE";
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 4)
 	public void TC01_OKbtn() {
 
-		expected = "TRUE";
 
-		if (driver.findElement(By.xpath("//button[@class='wsm-btn login-success']")).isDisplayed())
+		String actual = "";
+		if (driver.findElement(By.xpath("/html/body/div[2]/div[1]/section/form/div[4]/button")).isDisplayed())
 			actual = "TRUE";
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 5)
 	public void TC01_CANCELbtn() {
 
-		expected = "TRUE";
 
-		if (driver.findElement(By.xpath("(//a[@class='wsm-btn login-cancel'])[1]")).isDisplayed())
+		String actual = "";
+
+		if (driver.findElement(By.xpath("/html/body/div[2]/div[1]/section/form/div[4]/a")).isDisplayed())
 			actual = "TRUE";
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 6)
 	public void TC01_Rememberbtn() {
 
-		expected = "TRUE";
 
-		if (driver.findElement(By.xpath("//span[contains(@class,'span-remember')]")).isDisplayed())
+		String actual = "";
+		if (driver.findElement(By.xpath("/html/body/div[2]/div[1]/section/form/div[3]/label/span")).isDisplayed())
 			actual = "TRUE";
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 7)
 	public void TC01_Forgotbtn() {
 
-		expected = "TRUE";
+		String actual = "";
 
-		if (driver.findElement(By.xpath("//a[@class='btn-forgot-password'][contains(.,'Forgot password')]"))
-				.isDisplayed())
+		if (driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/a")).isDisplayed())
 			actual = "TRUE";
-		System.out.println(actual);
-		Assert.assertEquals(actual, expected);
+		Assert.assertEquals(actual, "TRUE");
+
 	}
 
 	@Test(priority = 8)
 	public void TC02() {
 
-		expected = "FALSE";
+
+		String actual = "";
 
 		if (driver.findElement(By.id("user_remember_me")).isSelected())
 			actual = "TRUE";
-		System.out.println(actual);
-		Assert.assertEquals(actual, expected);
+
+		Assert.assertEquals(actual, "FALSE");
+
 	}
 
 	/*
