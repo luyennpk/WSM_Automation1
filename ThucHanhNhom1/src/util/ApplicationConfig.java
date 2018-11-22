@@ -3,7 +3,7 @@ package util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public final class  ApplicationConfig {
+public final class ApplicationConfig {
 	private WebDriver driver;
 
 	ApplicationConfig() {

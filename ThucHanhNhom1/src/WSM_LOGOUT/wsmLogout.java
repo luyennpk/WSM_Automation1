@@ -19,7 +19,6 @@ public class wsmLogout extends CommonFunction {
 
 	// public WebDriver driver;
 	// public String expected = null;
-	
 
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException {

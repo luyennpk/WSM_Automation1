@@ -2,6 +2,12 @@
 =======
 /WSM_LOGIN/
 /WSM_PERSONAL_REQUEST/
+<<<<<<< HEAD
 >>>>>>> Luyen update Login and add new logout
 /WSM_LOGOUT/
 /util/
+=======
+/util/
+/WSM_LOGOUT/
+/WSM_FORGOT_PASSWORD/
+>>>>>>> Update Login and Add new TC personal request
